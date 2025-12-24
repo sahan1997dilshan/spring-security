@@ -83,9 +83,9 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.webjars/swagger-ui -->
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>swagger-ui</artifactId>
-            <version>5.27.1</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.8.5</version> <!-- Use the latest 2025 version -->
         </dependency>
 	</dependencies>
 
