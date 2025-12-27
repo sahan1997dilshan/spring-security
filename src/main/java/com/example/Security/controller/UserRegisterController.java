@@ -27,6 +27,8 @@ public class UserRegisterController {
         try
          {
             String password = securityConfig.passwordEncoder().encode(user.getPassword());
+            String role = "ROLE_"+user.getRole();
+            user.setRole(role);
             user.setPassword(password);
             userRepo.save(user);
             if (user.getId() > 0) {

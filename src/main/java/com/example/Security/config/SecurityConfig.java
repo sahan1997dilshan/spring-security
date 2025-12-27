@@ -3,6 +3,7 @@ package com.example.Security.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +20,8 @@ public class SecurityConfig {
       http
               .csrf(csrf -> csrf.disable())
               .authorizeHttpRequests(auth -> auth
-                      .requestMatchers("/api/v1/account/my-account").authenticated()
+                      .requestMatchers("/api/v1/account/my-account").hasAuthority("sahan")
+                      .requestMatchers("/api/v1/account/get-notice").hasAuthority("ROLE_USER")
                       .anyRequest().permitAll()
               )
               .httpBasic(Customizer.withDefaults());
